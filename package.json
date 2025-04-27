@@ -7,12 +7,12 @@
   },
   "files": [
     ".github",
-    "bin",
-    "src",
-    ".eslint.config.js",
     ".gitignore",
     ".npmrc",
     ".nvmrc",
+    "bin",
+    "src",
+    "eslint.config.js",
     "babel.config.js",
     "jest.config.js",
     "!__mocks__"
