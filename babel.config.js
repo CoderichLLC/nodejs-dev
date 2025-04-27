@@ -12,5 +12,5 @@ module.exports = {
   ignore: [
     '**/__mocks__/**',
   ],
-  plugins: ['@babel/plugin-transform-modules-commonjs'],
+  // plugins: ['@babel/plugin-transform-modules-commonjs'],
 };

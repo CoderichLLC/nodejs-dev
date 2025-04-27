@@ -1,7 +1,5 @@
 /* Copyright (c) 2023 Coderich LLC. All Rights Reserved. */
 
-/* eslint-disable no-console, import/no-dynamic-require, global-require */
-
 const Path = require('path');
 const ChildProcess = require('child_process');
 const AppRootPath = require('app-root-path');

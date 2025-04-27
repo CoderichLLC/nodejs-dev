@@ -1,14 +1,12 @@
 /* Copyright (c) 2023 Coderich LLC. All Rights Reserved. */
 
-/* eslint-disable no-console, import/no-dynamic-require, global-require */
-
 const FS = require('fs');
 const Path = require('path');
 const Glob = require('glob');
 const Semver = require('semver');
 const { EJSON, ObjectId } = require('bson');
 const Merge = require('lodash.merge');
-const eslintConfig = require('../.eslintrc');
+const eslintConfig = require('../eslint.config');
 const babelConfig = require('../babel.config');
 const { AppRootPath, cwdPackage, selfPath, binPath, shellCommand } = require('./util');
 
@@ -16,8 +14,8 @@ const cache = {};
 
 exports.ObjectId = ObjectId;
 
-exports.getEslintConfig = (config = {}) => {
-  return Merge({}, eslintConfig, config);
+exports.getEslintConfig = (...args) => {
+  return args.length ? eslintConfig.concat(...args) : eslintConfig;
 };
 
 exports.getBabelConfig = (config) => {
@@ -30,10 +28,10 @@ exports.copyrightHeader = () => {
 };
 
 exports.bootstrap = () => {
-  ['.github', '.eslintrc.js', '.gitignore', '.npmrc', '.nvmrc', 'babel.config.js', 'jest.config.js'].map(file => [Path.join(selfPath, file), Path.join(`${AppRootPath}`, file)]).forEach(([source, destination]) => {
+  ['.github', 'eslint.config.js', '.gitignore', '.npmrc', '.nvmrc', 'babel.config.js', 'jest.config.js'].map(file => [Path.join(selfPath, file), Path.join(`${AppRootPath}`, file)]).forEach(([source, destination]) => {
     try {
       console.log(shellCommand(`cp -RLpn ${source} ${destination}`));
-    } catch (e) {
+    } catch {
       console.log(`[Ignored] ${source}`);
     }
   });
@@ -87,7 +85,7 @@ exports.parseFixtures = (dir) => {
 
     try {
       switch (ext) {
-        case 'js': return Object.assign(prev, { [name]: require(filepath) }); // eslint-disable-line import/no-dynamic-require,global-require
+        case 'js': return Object.assign(prev, { [name]: require(filepath) });
         case 'json': return Object.assign(prev, { [name]: EJSON.parse(FS.readFileSync(filepath), { encoding: 'utf8', flag: 'r' }) });
         default: return prev;
       }
