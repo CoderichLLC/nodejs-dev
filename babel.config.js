@@ -9,8 +9,8 @@ module.exports = {
       },
     }],
   ],
-  ignore: [
-    '**/__mocks__/**',
-  ],
+  // ignore: [
+  //   '**/__mocks__/**',
+  // ],
   // plugins: ['@babel/plugin-transform-modules-commonjs'],
 };
