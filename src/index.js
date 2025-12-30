@@ -50,7 +50,7 @@ exports.npmPublish = (config = {}) => {
   const tag = `${name}@${cwdPackage.version}`;
   FS.writeFileSync(`${process.cwd()}/package.json`, JSON.stringify(cwdPackage, null, 2));
   console.log(shellCommand(`git add . && git commit -m "Publish ${tag} [skip ci]"`));
-  console.log(shellCommand('npm publish --access public'));
+  console.log(shellCommand('npm publish'));
   console.log(shellCommand(`git tag ${tag}`));
   console.log(shellCommand('git push && git push --tags'));
 };
