@@ -6,8 +6,8 @@ on:
       - 'release/**'
 
 permissions:
-  id-token: write     # Required for OIDC / trusted publishing
-  contents: write     # For commits/tags
+  id-token: write # Required for OIDC / trusted publishing
+  contents: write # For commits/tags
 
 jobs:
   publish:
@@ -38,11 +38,6 @@ jobs:
         run: |
           git config user.name "${{ vars.GIT_USER }}"
           git config user.email "${{ vars.GIT_EMAIL }}"
-
-      - name: Debug OIDC env
-        run: |
-          echo "ACTIONS_ID_TOKEN_REQUEST_URL=${ACTIONS_ID_TOKEN_REQUEST_URL}"
-          echo "ACTIONS_ID_TOKEN_REQUEST_TOKEN=${ACTIONS_ID_TOKEN_REQUEST_TOKEN}"
 
       - name: Publish via npmPublish script
         run: npm run dev npmPublish
