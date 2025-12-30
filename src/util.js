@@ -11,7 +11,11 @@ exports.AppRootPackage = require(`${AppRootPath}/package.json`);
 exports.AppRootPath = AppRootPath;
 
 exports.shellCommand = (cmd, ...args) => {
-  const { status = 0, stdout = '', stderr = '' } = ChildProcess.spawnSync(cmd, args.flat(), { shell: true, encoding: 'utf8' });
+  const { status = 0, stdout = '', stderr = '' } = ChildProcess.spawnSync(cmd, args.flat(), {
+    shell: true,
+    encoding: 'utf8',
+    env: process.env,
+  });
   if (status !== 0) throw new Error(stderr);
   return (stderr || stdout).trim();
 };
