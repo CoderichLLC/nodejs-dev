@@ -18,7 +18,7 @@
     "!__mocks__"
   ],
   "bin": {
-    "coderich-dev": "./bin/coderich-dev.js"
+    "coderich-dev": "bin/coderich-dev.js"
   },
   "scripts": {
     "lint": "eslint ./",
@@ -46,7 +46,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:CoderichLLC/nodejs-dev.git"
+    "url": "git+ssh://git@github.com/CoderichLLC/nodejs-dev.git"
   },
   "engines": {
     "node": "^22.0.0"
