@@ -6,8 +6,8 @@ on:
       - 'release/**'
 
 permissions:
-  id-token: write  # Required for OIDC / trusted publishing
-  contents: write  # For tagging / pushing commits
+  id-token: write     # Required for OIDC / trusted publishing
+  contents: write     # For commits/tags
 
 jobs:
   publish:
@@ -23,11 +23,13 @@ jobs:
           node-version: '22'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Use npm 11.5.1+ for trusted publishing
+      - name: Upgrade npm for trusted publishing
         run: |
-          corepack enable
-          corepack prepare npm@11.5.1 --activate
-          npm --version
+          npm install -g npm@11.5.1
+          echo "node: $(node --version)"
+          echo "npm:  $(npm --version)"
+          which node
+          which npm
 
       - name: Install deps
         run: npm ci
