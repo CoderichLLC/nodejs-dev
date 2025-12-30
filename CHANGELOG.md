@@ -1,3 +1,6 @@
+## v0.6.0
+- Github Actions via OIDC
+
 ## v0.5.0
 - Requires node22
 
