@@ -3,15 +3,16 @@ on:
     branches:
       - 'release/**'
 
-env:
-  CR_NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
 
 jobs:
   publish:
     runs-on: 'ubuntu-latest'
     steps:
-      - uses: 'actions/checkout@v3'
-      - uses: 'actions/setup-node@v3'
+      - uses: 'actions/checkout@v4'
+      - uses: 'actions/setup-node@v4'
         with:
           node-version: '22'
       - run: 'npm ci'
