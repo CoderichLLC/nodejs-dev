@@ -44,6 +44,10 @@
     "lodash.merge": "4.6.2",
     "semver": "7.7.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:CoderichLLC/nodejs-dev.git"
+  },
   "engines": {
     "node": "^22.0.0"
   }
