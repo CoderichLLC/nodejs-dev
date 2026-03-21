@@ -1,7 +1,7 @@
 /* Copyright (c) 2023 Coderich LLC. All Rights Reserved. */
 
-const Path = require('path');
-const ChildProcess = require('child_process');
+const Path = require('node:path');
+const ChildProcess = require('node:child_process');
 const AppRootPath = require('app-root-path');
 
 exports.binPath = Path.join(`${AppRootPath}`, 'node_modules', '.bin');

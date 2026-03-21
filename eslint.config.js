@@ -1,3 +1,4 @@
+const NodePlugin = require('eslint-plugin-n');
 const JestPlugin = require('eslint-plugin-jest');
 const ImportPlugin = require('eslint-plugin-import');
 const { node } = require('globals');
@@ -15,6 +16,7 @@ module.exports = [
       },
     },
     plugins: {
+      n: NodePlugin,
       jest: JestPlugin,
       import: ImportPlugin,
     },

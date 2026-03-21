@@ -1,7 +1,7 @@
 /* Copyright (c) 2023 Coderich LLC. All Rights Reserved. */
 
-const FS = require('fs');
-const Path = require('path');
+const FS = require('node:fs');
+const Path = require('node:path');
 const Glob = require('glob');
 const Semver = require('semver');
 const { EJSON, ObjectId } = require('bson');

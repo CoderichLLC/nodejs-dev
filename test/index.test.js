@@ -1,6 +1,6 @@
 /* Copyright (c) 2023 Coderich LLC. All Rights Reserved. */
 
-const Path = require('path');
+const Path = require('node:path');
 const { bootstrap, autoMock, getMockFiles, parseFixtures } = require('../src/index');
 
 const appRootPath = Path.join(__dirname, '..');

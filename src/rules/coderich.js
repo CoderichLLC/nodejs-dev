@@ -24,10 +24,12 @@ module.exports = {
     'no-constructor-return': 'off',
     'no-param-reassign': 0,
     'no-plusplus': 0,
+    'no-restricted-syntax': 0,
     'one-var': 0,
     'one-var-declaration-per-line': 0,
     'no-return-assign': ['error', 'except-parens'],
     'no-unused-vars': ['error', { args: 'none' }],
     'object-curly-newline': ['error', { minProperties: 10, consistent: true }],
+    'n/prefer-node-protocol': ['error'],
   },
 };
