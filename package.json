@@ -27,7 +27,7 @@
     "build": "babel src --out-dir dist"
   },
   "dependencies": {
-    "@babel/core": "7.27.4",
+    "@babel/core": "7.29.6",
     "@babel/eslint-parser": "7.27.5",
     "@babel/preset-env": "7.27.2",
     "@eslint/js": "9.36.0",
